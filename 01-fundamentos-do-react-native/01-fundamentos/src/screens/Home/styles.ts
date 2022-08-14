@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     },
     eventName: {
         fontSize: 12,
-      },
+    },
     eventDate: {
       color: 'red',
     },
