@@ -7,9 +7,19 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
-    text: {
+    eventName: {
+        fontSize: 12,
+      },
+    eventDate: {
       color: 'red',
-  
+    },
+    input: {
+        backgroundColor: '#1f1e25',
+        height: 56,
+        borderRadius: 5,
+        color: '#fff',
+        padding: 16,
+        fontSize: 16
     },
   });
   
