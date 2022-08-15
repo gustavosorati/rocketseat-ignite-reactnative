@@ -1,4 +1,4 @@
-import { FlatList, ScrollView, StatusBar, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Alert, FlatList, ScrollView, StatusBar, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { Participant } from '../../components/Participant';
 
 import {styles} from './styles'
@@ -9,11 +9,22 @@ export default function Home() {
 
 
     function handleParticipantAdd() {
-        console.log('Você clicou no botão de adicionar')
+        if(participants.includes('Rodrigo')) {
+            return Alert.alert("Participante Encontrado", "Já existe um participante na lista com esse nome.")
+        }
     }
 
-    function handleParticipantRemove() {
-        console.log('Você clicou no botão de remover')
+    function handleParticipantRemove(participant: string) {
+        return Alert.alert("Remover", `Deseja remover o participane ${participant}?`, [
+            {
+                text: "Não",
+                style: 'cancel'
+            },
+            {
+                text: 'Sim',
+                onPress: () => Alert.alert("Deletado!")
+            },
+        ])
     }
 
     return (
@@ -46,7 +57,11 @@ export default function Home() {
         <ScrollView showsVerticalScrollIndicator={false}>
             {participants.map(participant => {
                 return(
-                    <Participant key={participant} name={participant} onRemove={handleParticipantRemove} />
+                    <Participant 
+                        key={participant} 
+                        name={participant} 
+                        onRemove={() => handleParticipantRemove(participant)} 
+                    />
                 )
             })}
         </ScrollView>
