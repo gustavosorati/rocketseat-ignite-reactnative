@@ -19,11 +19,7 @@ export default function Home() {
         setParticipants(state => [...state, participantName]);
     }
 
-    function handleParticipantRemove(name: string) {
-        const filteredParticipants = 
-        
-        
-        
+    function handleParticipantRemove(name: string) {       
         return Alert.alert("Remover", `Deseja remover o participane ${name}?`, [
             {
                 text: "Não",
