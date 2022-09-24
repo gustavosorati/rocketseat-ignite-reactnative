@@ -7,7 +7,8 @@ export function Header(){
         <View style={styles.container}>
             <Image source={require('../../../assets/rocket.png')} style={styles.logo} />
             <Text style={styles.title}>
-                to<Text style={styles.span}>do</Text>  
+                to
+                <Text style={styles.span}>do</Text>  
             </Text>
         </View>
     )
