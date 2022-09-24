@@ -1,15 +1,21 @@
+import { PlusCircle } from "phosphor-react-native";
 import { useState } from "react";
-import { TouchableOpacity, TextInput, View, Image, Text } from "react-native";
+import { TouchableHighlight, TextInput, View } from "react-native";
 import { styles } from "./styles";
 
-export function Input(){
+interface InputProps {
+    addTask: (text: string) => void;
+}
+
+export function Input({ addTask }: InputProps){
+    const [text, setText] = useState('');
     const [isFocus, setIsFocused] = useState(false);
     const [isActive, setIsActive] = useState(false);
 
-    function handleSubmit(a: any){
-        
+    function handleSubmit(){
+        addTask(text);
+        setText('');
     }
-
 
     return (
         <View style={styles.container}>
@@ -19,13 +25,16 @@ export function Input(){
                 placeholderTextColor={"#808080"}
                 onBlur={() => setIsFocused(false)}
                 onFocus={() => setIsFocused(true)}
+                onChangeText={setText}
+                value={text}
             />
-            <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-                <Image 
-                    style={styles.btnImage}
-                    source={require('../../../../assets/components/plus.png')} 
-                />
-            </TouchableOpacity>
+            <TouchableHighlight 
+                style={[styles.button]} 
+                onPress={handleSubmit}
+                underlayColor={"#4EA8DE"}
+            >
+                <PlusCircle color="white" size={20} />
+            </TouchableHighlight>
         </View>
     )
 }
