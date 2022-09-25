@@ -78,7 +78,7 @@ export function Players() {
         />
 
         <Button 
-          title="Remover Turma"
+          text="Remover Turma"
           type='SECONDARY'
         />
     </Container>
