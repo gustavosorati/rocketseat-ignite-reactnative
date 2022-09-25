@@ -14,7 +14,7 @@ export default function App() {
        <StatusBar 
         barStyle={'light-content'}
         backgroundColor="transparent"
-        translucent={true}
+        translucent
       />
 
       { fonstsLoaded ? <Groups /> : <Loading /> }
