@@ -1,6 +1,6 @@
 import theme from '@theme/index';
 import { ThemeProvider } from 'styled-components';
-import { Groups } from './src/screens/Groups';
+import { NewGroup } from './src/screens/NewGroup';
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto'
 import { Loading } from '@components/Loading';
 import { StatusBar } from 'react-native';
@@ -17,7 +17,7 @@ export default function App() {
         translucent
       />
 
-      { fonstsLoaded ? <Groups /> : <Loading /> }
+      { fonstsLoaded ? <NewGroup /> : <Loading /> }
     </ThemeProvider>
   );
 }

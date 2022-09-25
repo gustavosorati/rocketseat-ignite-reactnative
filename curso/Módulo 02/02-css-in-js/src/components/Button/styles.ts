@@ -8,6 +8,7 @@ type Props = {
 
 export const Container = styled.TouchableOpacity<Props>`
   flex: 1;
+  width: 100%;
 
   min-height: 56px;
   max-height: 56px;
@@ -21,7 +22,7 @@ export const Container = styled.TouchableOpacity<Props>`
 `;
 
 export const Title = styled.Text`
-  font-size: ${({theme}) => theme.FONT_SIZE.MD};
+  font-size: ${({theme}) => theme.FONT_SIZE.MD}px;
   font-family: ${({theme}) => theme.FONT_FAMILY.BOLD};
   color: ${({theme}) => theme.COLORS.WHITE};
 `;
