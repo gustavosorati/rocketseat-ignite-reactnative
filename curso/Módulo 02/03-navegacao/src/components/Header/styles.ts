@@ -1,3 +1,4 @@
+import { TouchableOpacityProps, TouchableOpacity } from 'react-native';
 import styled from "styled-components/native";
 import { CaretLeft } from "phosphor-react-native";
 
@@ -14,7 +15,7 @@ export const Logo = styled.Image`
   height: 55px;
 `
 
-export const BackButton = styled.TouchableOpacity`
+export const BackButton = styled.TouchableOpacity<TouchableOpacityProps>`
   flex: 1
 `;
 
