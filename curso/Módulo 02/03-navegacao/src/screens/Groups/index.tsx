@@ -7,10 +7,28 @@ import { Container } from './styles';
 import { FlatList } from 'react-native';
 import { ListEmpty } from '@components/ListEmpty';
 import { Button } from '@components/Button';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+// type RootParamList = {
+//   groups: undefined;
+//   new: undefined;
+//   players: {
+//     group: string;
+//   }
+// }
+
+// type Props = {
+//   navigation: NativeStackNavigationProp<RootParamList, 'groups'>
+// }
+
 
 export function Groups() {
   const [groups, setGroups] = useState([]);
   const navigation = useNavigation();
+
+  function handleNewGroup() {
+    navigation.navigate('new');
+  }
 
   return (
     <Container>
@@ -31,7 +49,7 @@ export function Groups() {
 
       <Button 
         text="Criar nova turma"
-        // onPress={handleNewGroup}
+        onPress={handleNewGroup}
       />
       
     </Container>
