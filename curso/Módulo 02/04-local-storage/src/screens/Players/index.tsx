@@ -99,6 +99,9 @@ export function Players() {
             autoCorrect={false}
             value={newPlayerName}
             inputRef={newPlayerNameInputRef}
+            
+            onSubmitEditing={handleAddPlayer}
+            returnKeyType="done"
           />
 
           <ButtonIcon
