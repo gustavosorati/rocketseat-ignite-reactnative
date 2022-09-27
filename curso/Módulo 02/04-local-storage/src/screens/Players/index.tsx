@@ -18,6 +18,7 @@ import { AppError } from '@utils/AppError';
 
 import { Container, Form, Icon, HeaderList, NumberOfPlayers } from "./styles";
 import { PlayerStorageDTO } from '@storage/player/PlayerStorageDTO';
+import { playerRemoveByGroup } from '@storage/player/playerRemoveByGroup';
 
 type RouteParams = {
   group: string;
@@ -59,6 +60,16 @@ export function Players() {
         Alert.alert('Novo player', 'Não foi possível adicionar');
         console.log(error);
       }
+    }
+  }
+
+  async function handleRemovePlayer(playerName: string) {
+    try {
+      await playerRemoveByGroup(playerName, group);
+      fetchPlayerByTeam();
+    } catch(error) {
+      console.log(error);
+      Alert.alert('Remover pessoa', 'Não foi possível remover essa pessoa');
     }
   }
 
@@ -133,7 +144,7 @@ export function Players() {
           renderItem={({item}) => (
             <PlayerCard 
               name={item.name} 
-              onRemove={() => {}}
+              onRemove={() => handleRemovePlayer(item.name)}
             />
           )}
           showsVerticalScrollIndicator={false}
