@@ -3,6 +3,8 @@ import styled, { css } from "styled-components/native";
 export const Container = styled.View`
   width: 100%;
   margin: 32px 0;
+  
+  align-self: center;
 `
 
 export const Title = styled.Text`
