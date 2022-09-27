@@ -1,4 +1,3 @@
-import { withProps } from "@utils/withProps";
 import { TouchableOpacity, TouchableOpacityProps } from "react-native";
 import styled, { css } from "styled-components/native";
 
