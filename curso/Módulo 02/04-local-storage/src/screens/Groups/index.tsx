@@ -40,6 +40,10 @@ export function Groups() {
     }
   }
 
+  function handleOpenGroup(group: string) {
+    navigation.navigate('players',{ group });
+  }
+
   useFocusEffect(useCallback(() => {
     fetchGroups();
   }, []));
