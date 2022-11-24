@@ -1,13 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { Nunito_400Regular, Nunito_700Bold } from '@expo-google-fonts/nunito'
+import { Nunito_400Regular, Nunito_700Bold } from '@expo-google-fonts/nunito';
 import { useFonts } from 'expo-font';
 import { Routes } from './src/routes';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components/native';
 import theme from './src/theme/index';
-import {Text} from 'react-native'
+import {Text} from 'react-native';
 
 export default function App() {
-  const [fontsLoaded] = useFonts({ Nunito_400Regular, Nunito_700Bold })
+  const [fontsLoaded] = useFonts({ Nunito_400Regular, Nunito_700Bold });
 
   return (
     <ThemeProvider theme={theme}>
