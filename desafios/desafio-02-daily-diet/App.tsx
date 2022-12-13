@@ -5,6 +5,7 @@ import { Routes } from './src/routes';
 import { ThemeProvider } from 'styled-components/native';
 import theme from './src/theme/index';
 import {Text} from 'react-native';
+import { NewMeal } from '@screens/NewMeal';
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Nunito_400Regular, Nunito_700Bold });
@@ -13,7 +14,10 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <StatusBar />
 
-      { fontsLoaded ? <Routes /> : <Text>Não carregou</Text> }
+      {/* { fontsLoaded ? <Routes /> : <Text>Não carregou</Text> } */}
+      { fontsLoaded ? <NewMeal /> : <Text>Não carregou</Text> }
+
+      {/* <NewMeal /> */}
     </ThemeProvider>
   );
 }
